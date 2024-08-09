@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#root {
+    /* --dark: #1A2130;
+    --lighter: #5A72A0;
+    --lightest: #FDFFE2;
+    --highlight: #83B4FF; */
+        
+    min-width: 100vw;
+    min-height: 100vh;
+        
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: flex-start;
+    gap: 40px;
+
+    /* background-color: var(--dark); */
+}
