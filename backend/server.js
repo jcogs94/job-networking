@@ -2,8 +2,8 @@ import dotenv from 'dotenv'
 import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
-import methodOverride from 'method-override'
-import APIRouter from './controllers/jobNetworkingController.js'
+import companyRouter from './controllers/companyController.js'
+import contactsRouter from './controllers/contactsController.js'
 
 const PORT = 3000
 
@@ -18,9 +18,9 @@ mongoose.connection.on('connected', () => {
 
 app.use(cors())
 app.use(express.json())
-app.use(methodOverride('_method'))
 
-app.use('/job-networking-api', APIRouter)
+app.use('/job-networking-api', companyRouter)
+app.use('/job-networking-api/:companyId/contacts', contactsRouter)
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}...`)
