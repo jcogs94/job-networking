@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom'
 import './Nav.css'
 
 const Nav = () => {
     return <>
         <nav>
-            <h1>Job Networking</h1>
+            <Link to='/'><h1>Job Networking</h1></Link>
         </nav>
     </>
 }
