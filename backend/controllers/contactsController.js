@@ -50,5 +50,28 @@ contactsRouter.post('/', async (req, res) => {
     }
 })
 
+// Delete contact
+contactsRouter.delete('/:contactId', async (req, res) => {
+    try {
+        const foundCompany = await Company.findById(req.companyId)
+        
+        if (!foundCompany) {
+            res.status(404)
+            throw new Error('Company not found.')
+        } else {
+            for (let i = 0; i < foundCompany.contacts.length; i++) {
+                if (foundCompany.contacts[i]._id.toString() === req.params.contactId) {
+                    foundCompany.contacts.splice(i, 1)
+                }
+            }
+
+            foundCompany.save()
+            res.status(200).json(foundCompany)
+        }
+    } catch (error) {
+        res.status(500).json({ error: error.message })
+    }
+})
+
 
 export default contactsRouter
