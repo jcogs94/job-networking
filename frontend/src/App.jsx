@@ -1,12 +1,19 @@
+import { Route, Routes } from 'react-router-dom'
 import Nav from './components/Nav/Nav.jsx'
-import MainContainer from './components/MainContainer/MainContainer.jsx'
+import Home from './components/Home/Home.jsx'
+import Companies from './components/Companies/Companies.jsx'
 import Footer from './components/Footer/Footer.jsx'
 import './App.css'
 
 const App = () => {
     return <>
         <Nav />
-        <MainComponent />
+        <main>
+           <Routes>
+               <Route path='/' element={<Home />} />
+               <Route path='/companies' element={<Companies />} />
+           </Routes>
+        </main>
         <Footer />
     </>
 }

@@ -4,10 +4,10 @@
 }
 
 #root {
-    /* --dark: #1A2130;
-    --lighter: #5A72A0;
-    --lightest: #FDFFE2;
-    --highlight: #83B4FF; */
+    --dark: #6482AD;
+    --lighter: #7FA1C3;
+    --lightest: #E2DAD6;
+    --highlight: #F5EDED;
         
     min-width: 100vw;
     min-height: 100vh;
@@ -18,5 +18,18 @@
     justify-items: flex-start;
     gap: 40px;
 
-    /* background-color: var(--dark); */
+    background-color: var(--dark);
+}
+
+button {
+    border-radius: 8px;
+    padding: 10px 20px;
+    
+    background-color: var(--lightest);
+    border-color: var(--lighter);
+
+    > a {
+        text-decoration: none;
+        color: var(--dark);
+    }
 }
