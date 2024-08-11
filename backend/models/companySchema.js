@@ -39,7 +39,7 @@ const contactSchema = mongoose.Schema({
     },
     nextFollowUpDate: {
         type: String,
-        required: true
+        required: false
     }
 })
 

@@ -20,7 +20,10 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/job-networking-api', companyRouter)
-app.use('/job-networking-api/:companyId/contacts', contactsRouter)
+app.use('/job-networking-api/:companyId/contacts', (req, res, next) => {
+    req.companyId = req.params.companyId
+    next()
+}, contactsRouter)
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}...`)
