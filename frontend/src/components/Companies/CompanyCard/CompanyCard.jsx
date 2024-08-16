@@ -1,7 +1,17 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import './CompanyCard.css'
 
 const CompanyCard = ({ company }) => {
+    const navigate = useNavigate()
+    
+    const handleClickView = () => {
+        navigate(`/companies/${company._id}/contacts`)
+    }
+
+    const handleClickAdd = () => {
+        navigate(`/companies/${company._id}/contacts/new`)
+    }
+    
     return <>
         <div className="company-card">
             <h2>{company.name}</h2>
@@ -20,9 +30,9 @@ const CompanyCard = ({ company }) => {
             </ul>
             <div className="contact-buttons">
                 {company.contacts.length > 0
-                    ? <button><Link to={`/companies/`}>View Contacts</Link></button>
+                    ? <button onClick={handleClickView}>View Contacts</button>
                     : null}
-                <button><Link to={`/companies/`}>Add Contact</Link></button>
+                <button onClick={handleClickAdd}>Add Contact</button>
             </div>
         </div>
     </>
