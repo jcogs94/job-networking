@@ -11,6 +11,18 @@ const index = async () => {
     }
 }
 
+// Returns a specific company
+const show = async (id) => {
+    try {
+        const res = await fetch(`${BASE_URL}/${id}`)
+        const data = await res.json()
+        return data
+    } catch (err) {
+        console.log(err)
+        
+    }
+}
+
 export {
-    index
+    index, show
 }
