@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import * as companiesService from '../../services/companiesService.js'
-import './Companies.css'
 import CompanyCard from './CompanyCard/CompanyCard'
+import './Companies.css'
 
 const Companies = () => {
     const [allCompanies, setAllCompanies] = useState([])
