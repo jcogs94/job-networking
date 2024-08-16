@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import * as companiesService from '../../services/companiesService.js'
 import ContactCard from './ContactCard/ContactCard.jsx'
@@ -7,6 +7,7 @@ import './Contacts.css'
 const Contacts = () => {
     const [company, setCompany] = useState({ contacts: [] })
     let { companyId } = useParams()
+    const navigate = useNavigate()
     
     useEffect(() => {
         const fetchCompany = async () => {
@@ -36,6 +37,7 @@ const Contacts = () => {
                     <ContactCard key={`contact ${index+1}`} contact={contact} />
                 ))}
             </div>
+            <button onClick={() => navigate('/companies')}>Go Back</button>
         </div>
     </>
 }
