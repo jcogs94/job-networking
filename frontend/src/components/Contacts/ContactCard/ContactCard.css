@@ -1,14 +1,54 @@
 .contact-card {
     width: 100%;
-    height: 275px;
-    padding: 20px 10px;
+    padding: 30px 10px;
 
     display: flex;
     flex-direction: column;
+    gap: 30px;
 
     background-color: var(--lighter);
 
     > h2 {
         align-self: center;
+    }
+
+    > ul {
+        list-style: none;
+        padding-left: 20px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+.currently-contacting, .not-currently-contacting {
+    width: calc(100% - 20px);
+    align-self: center;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    color: var(--dark);
+    background-color: var(--highlight);
+    border-radius: 8px;
+
+    > h3 {
+        align-self: center;
+    }
+
+    > p {
+        align-self: center;
+    }
+
+    > ul {
+        list-style: none;
+        padding: 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
     }
 }
