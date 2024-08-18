@@ -39,6 +39,23 @@ const create = async (formData) => {
     }
 }
 
+// Update a company
+const update = async (companyId, formData) => {
+    try {
+        const res = await fetch(`${BASE_URL}/${companyId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData)
+        })
+        const updatedCompany = await res.json()
+        return updatedCompany
+    } catch (err) {
+        console.log(err)
+    }
+}
+
 export {
-    index, show, create
+    index, show, create, update
 }
