@@ -11,13 +11,22 @@ const CompanyCard = ({ company }) => {
     const handleClickAdd = () => {
         navigate(`/companies/${company._id}/contacts/new`)
     }
+
+    let motivationStars = ''
+    for (let i = 1; i < 6; i++) {
+        if (company.motivation >= i) {
+            motivationStars += '★'
+        } else {
+            motivationStars += '☆'
+        }
+    }
     
     return <>
         <div className="company-card">
             <h2>{company.name}</h2>
             <p>{company.location}</p>
             <ul className="company-card-details">
-                <li><b>Motivation:</b> {company.motivation}</li>
+                <li><b>Motivation:</b> {motivationStars}</li>
                 <li><b>Hiring:</b> {
                         company.posting === 1 ? 'No' : null
                     }{
