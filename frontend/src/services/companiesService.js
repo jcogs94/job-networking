@@ -19,10 +19,28 @@ const show = async (id) => {
         return data
     } catch (err) {
         console.log(err)
-        
+    }
+}
+
+// Create a new company
+const create = async (formData) => {
+    console.log('create ran...');
+    
+    try {
+        const res = await fetch(BASE_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData)
+        })
+        const newCompany = await res.json()
+        return newCompany
+    } catch (err) {
+        console.log(err)
     }
 }
 
 export {
-    index, show
+    index, show, create
 }
