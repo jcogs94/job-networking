@@ -7,9 +7,13 @@ const CompanyCard = ({ company }) => {
     const handleClickView = () => {
         navigate(`/companies/${company._id}/contacts`)
     }
-
+    
     const handleClickAdd = () => {
         navigate(`/companies/${company._id}/contacts/new`)
+    }
+    
+    const handleClickEdit = () => {
+        navigate(`/companies/${company._id}/edit`)
     }
 
     let motivationStars = ''
@@ -37,11 +41,11 @@ const CompanyCard = ({ company }) => {
                 <li><b>Alumni:</b> {company.alumni ? 'Yes' : 'No'}</li>
                 <li><b>Contacts:</b> {company.contacts.length}</li>
             </ul>
-            <div className="contact-buttons">
+            <div className="company-card-buttons">
                 {company.contacts.length > 0
                     ? <button onClick={handleClickView}>View Contacts</button>
-                    : null}
-                <button onClick={handleClickAdd}>Add Contact</button>
+                    : <button onClick={handleClickAdd}>Add Contact</button>}
+                <button onClick={handleClickEdit}>Edit Company</button>
             </div>
         </div>
     </>

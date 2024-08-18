@@ -27,7 +27,10 @@ const Companies = () => {
     
     return <>
         <div id="companies">
-            <h1>Companies</h1>
+            <div id="companies-heading">
+                <h1>Companies</h1>
+                <p><b>Total: </b>{allCompanies.length}</p>
+            </div>
             {allCompanies.map((company, index) => (
                 <CompanyCard key={`company ${index+1}`} company={company} />
             ))}
