@@ -20,6 +20,10 @@
         flex-direction: column;
         gap: 5px;
     }
+
+    > button {
+        color: var(--dark);
+    }
 }
 
 .currently-contacting, .not-currently-contacting {

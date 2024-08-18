@@ -18,6 +18,11 @@
 
 #contact-card-container {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
 
 #contacts-buttons {
@@ -25,4 +30,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+
+    > button {
+        color: var(--dark);
+    }
 }

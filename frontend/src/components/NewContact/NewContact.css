@@ -1,1 +1,54 @@
+#new-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
 
+    color: var(--highlight);
+
+    > button {
+        color: var(--dark);
+    }
+}
+
+#new-contact-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#new-contact-form {
+    width: 100%;
+    padding: 20px 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    border-radius: 8px;
+    background-color: var(--lighter);
+
+    > label {
+        line-height: 1.5em;
+    }
+
+    > button {
+        margin: 10px 40px 0;
+        color: var(--dark);
+    }
+}
+
+#currently-contacting-radio-container, #response-radio-container {
+    width: 100%;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    > div {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+}
