@@ -5,6 +5,10 @@
     gap: 40px;
 
     color: var(--highlight);
+
+    > button {
+        color: var(--dark);
+    }
 }
 
 #new-company-form {

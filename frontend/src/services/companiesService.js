@@ -24,8 +24,6 @@ const show = async (id) => {
 
 // Create a new company
 const create = async (formData) => {
-    console.log('create ran...');
-    
     try {
         const res = await fetch(BASE_URL, {
             method: "POST",
