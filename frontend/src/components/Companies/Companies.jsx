@@ -34,7 +34,7 @@ const Companies = () => {
             {allCompanies.map((company, index) => (
                 <CompanyCard key={`company ${index+1}`} company={company} />
             ))}
-            <button onClick={() => nagivate('/companies/new')}>Add Company</button>
+            <button onClick={() => navigate('/companies/new')}>Add Company</button>
         </div>
     </>
 }
