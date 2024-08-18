@@ -39,7 +39,7 @@ const Contacts = () => {
             </div>
             <div id="contacts-buttons">
                 <button onClick={() => navigate(`/companies/${company._id}/contacts/new`)}>Add Contact</button>
-                <button onClick={() => navigate('/companies')}>Go Back</button>
+                <button onClick={() => navigate(-1)}>Go Back</button>
             </div>
         </div>
     </>

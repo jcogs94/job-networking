@@ -84,6 +84,7 @@ const NewCompany = () => {
                 </div>
                 <button type="submit">Create Company</button>
             </form>
+            <button onClick={() => navigate(-1)}>Go Back</button>
         </div>
     </>
 }
