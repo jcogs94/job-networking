@@ -1,6 +1,14 @@
+import { useParams, useNavigate } from 'react-router-dom'
 import './ContactCard.css'
 
 const ContactCard = ({ contact }) => {
+    const navigate = useNavigate()
+    const { companyId } = useParams()
+    
+    const handleClick = () => {
+        navigate(`/companies/${companyId}/contacts/${contact._id}/edit`)
+    }
+    
     return <>
         <div className="contact-card">
             <h2>{contact.name}</h2>
@@ -28,6 +36,7 @@ const ContactCard = ({ contact }) => {
                 <li><b>Phone Number:</b> {contact.phoneNumber}</li>
                 <li><b>Email:</b> {contact.email}</li>
             </ul>
+            <button className='edit-contact-button' onClick={handleClick}>Edit Contact</button>
         </div>
     </>
 }

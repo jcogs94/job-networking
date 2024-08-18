@@ -37,7 +37,10 @@ const Contacts = () => {
                     <ContactCard key={`contact ${index+1}`} contact={contact} />
                 ))}
             </div>
-            <button onClick={() => navigate('/companies')}>Go Back</button>
+            <div id="contacts-buttons">
+                <button onClick={() => navigate(`/companies/${company._id}/contacts/new`)}>Add Contact</button>
+                <button onClick={() => navigate('/companies')}>Go Back</button>
+            </div>
         </div>
     </>
 }
