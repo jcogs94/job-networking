@@ -56,6 +56,22 @@ const update = async (companyId, formData) => {
     }
 }
 
+// Delete company
+const remove = async (companyId) => {
+    try {
+        const res = await fetch(`${BASE_URL}/${companyId}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        })
+        const deletedCompany = await res.json()
+        return deletedCompany
+    } catch (err) {
+        console.log(err)
+    }
+}
+
 export {
-    index, show, create, update
+    index, show, create, update, remove
 }

@@ -4,6 +4,7 @@ import * as companiesService from '../../services/companiesService.js'
 import './EditCompany.css'
 
 // TODO: Add validation to form
+// TODO: Add confirmation to Delete Company
 const EditCompany = () => {
     const navigate = useNavigate()
     const { companyId } = useParams()
@@ -85,6 +86,12 @@ const EditCompany = () => {
         e.preventDefault()
     }
 
+    const handleDelete = () => {
+        companiesService.remove(companyId)
+        navigate('/companies')
+        navigate(0)
+    }
+
     return <>
         <div id="update-company">
             <h1>Update Company</h1>
@@ -126,7 +133,10 @@ const EditCompany = () => {
                 </div>
                 <button type="submit">Update Company</button>
             </form>
-            <button onClick={() => navigate(-1)}>Go Back</button>
+            <div id="update-company-buttons">
+                <button onClick={handleDelete}>Delete Company</button>
+                <button onClick={() => navigate(-1)}>Go Back</button>
+            </div>
         </div>
     </>
 }
